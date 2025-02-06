@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Hello World",
+    "version": "1.0",
+    "description": "My first Chrome Extension",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "hello_img.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "permissions": ["storage"]
+}

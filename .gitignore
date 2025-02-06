@@ -89,3 +89,25 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Ignore node modules
+node_modules/
+
+# Ignore TypeScript build output
+dist/
+*.js
+*.js.map
+*.d.ts
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+*.swp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore dependency lock files (optional)
+package-lock.json
+yarn.lock
