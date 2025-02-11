@@ -3,7 +3,8 @@
         const pageData = {
             title: document.title,
             url: window.location.href,
-            html: document.body.outerHTML // Only collect content inside <body>
+            // html: document.body.outerHTML
+            html: document.body.innerText
         };
 
         chrome.storage.local.set({ pageData }, () => {
