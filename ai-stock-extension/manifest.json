@@ -3,8 +3,15 @@
   "name": "Page Data Collector",
   "version": "1.0",
   "description": "Collects and displays page data on a popup",
-  "permissions": ["storage", "activeTab", "scripting"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "webRequest"
+],
+"host_permissions": [
+    "http://localhost:8080/*"
+],
   "background": {
     "service_worker": "background.js"
   },
@@ -22,5 +29,11 @@
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["vendor/axios.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

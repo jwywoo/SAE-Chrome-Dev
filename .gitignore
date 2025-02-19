@@ -92,3 +92,5 @@ Thumbs.db
 # Ignore TypeScript build output
 *.js.map
 *.d.ts
+
+*/vendor
