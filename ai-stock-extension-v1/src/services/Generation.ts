@@ -22,7 +22,7 @@ const Generation = {
         }
       );
 
-      console.log("📡 Sending request to FastAPI:", pageData);
+      
 
       // Send request using axios
       const response = await axios.post("http://127.0.0.1:8000/ai/stock/generation/", pageData, {

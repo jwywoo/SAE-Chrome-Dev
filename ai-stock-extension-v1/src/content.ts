@@ -13,3 +13,12 @@ setTimeout(() => {
     console.log("✅ Page data saved after 2 seconds:", pageData);
   });
 }, 2000);
+
+
+window.addEventListener("message", (event) => {
+  if (event.source !== window) return; // Ensure it's from the same page
+  if (event.data.action === "saveToken") {
+    // ✅ Save token inside Chrome Extension storage
+    chrome.runtime.sendMessage({ action: "saveToken", token: event.data.token });
+  }
+});

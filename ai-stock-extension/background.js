@@ -46,12 +46,11 @@ chrome.webRequest.onHeadersReceived.addListener(
 
         if (authorizationHeader) {
             let token = authorizationHeader.value;
-            // console.log("✅ [BG] Raw Authorization Header:", token);
 
             // If the token is prefixed with "Bearer ", strip it out
             if (token.startsWith("Bearer ")) {
                 token = token.replace("Bearer ", "");
-                // console.log("✅ [BG] Cleaned Token:", token);
+                
             }
 
             chrome.storage.local.set({ jwtToken: token }, () => {

@@ -2,7 +2,6 @@ const Storage = {
   getPageData: (): Promise<{ title: string; url: string; content: string }> => {
     return new Promise((resolve) => {
       chrome.storage.local.get(["pageData"], (data) => {
-        console.log("✅ Fetched page data:", data.pageData);
         resolve(
           data.pageData || { title: "Unknown", url: "Unknown", content: "No content available" }
         );
