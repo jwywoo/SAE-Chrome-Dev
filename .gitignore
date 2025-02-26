@@ -5,6 +5,8 @@ dist/
 /tmp
 /out-tsc
 
+.scannerwork
+
 # Runtime data
 pids
 *.pid
