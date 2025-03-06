@@ -1,6 +1,18 @@
 import axios from "axios";
 
 const ApiService = {
+  saveData: async (pageData: {title: String, url: String, content: String}) => {
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/ai/stock/test/", pageData, {
+        headers: { "Content-Type": "application/json" },
+      });
+      return response.data; 
+    } catch (error) {
+      console.error("❌ Error sending page data:", error);
+      throw error; // Rethrow for handling elsewhere
+    }
+  },
+
   saveStock: async (stock: { stock_name: string; ticker_symbol: string; market_name: string }) => {
     console.log("✅ Save button clicked!", stock);
 

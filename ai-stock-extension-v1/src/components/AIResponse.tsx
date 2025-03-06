@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Paper, Typography, CircularProgress, List, ListItem, Grid } from "@mui/material";
 import GenerationRequestButton from "./GenerationRequestButton";
 import SaveButton from "./SaveButton"; // ✅ Import SaveButton
+import PageDataSendButton from "./PageDataSendButton";
 
 const AIResponse = () => {
   const [stocks, setStocks] = useState<{ stock_name: string; ticker_symbol: string; market_name: string }[] | null>(null);
@@ -12,6 +13,7 @@ const AIResponse = () => {
       <Grid container alignItems="center" justifyContent="space-between">
         <Typography variant="h6" style={{ fontWeight: "bold" }}>📊 AI</Typography>
         <GenerationRequestButton setLoading={setLoading} setStocks={setStocks} />
+        <PageDataSendButton />
       </Grid>
 
       {loading ? (
